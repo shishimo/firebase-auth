@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		C8695733234440D8007FF50F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8695731234440D8007FF50F /* LaunchScreen.storyboard */; };
 		C869573E234440D9007FF50F /* firebase_authTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C869573D234440D9007FF50F /* firebase_authTests.swift */; };
 		C8695749234440D9007FF50F /* firebase_authUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695748234440D9007FF50F /* firebase_authUITests.swift */; };
+		C8DC283F2344BC23002D78EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C8DC283E2344BC23002D78EB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C8695744234440D9007FF50F /* firebase-authUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "firebase-authUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8695748234440D9007FF50F /* firebase_authUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_authUITests.swift; sourceTree = "<group>"; };
 		C869574A234440D9007FF50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8DC283E2344BC23002D78EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,6 @@
 				A1E176BC3636D76179511F0C /* Pods-firebase-authTests.debug.xcconfig */,
 				62DA6488D424FFB69A4AB4F7 /* Pods-firebase-authTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -136,6 +137,7 @@
 				C869572C234440D8007FF50F /* Assets.xcassets */,
 				C8695731234440D8007FF50F /* LaunchScreen.storyboard */,
 				C8695734234440D8007FF50F /* Info.plist */,
+				C8DC283E2344BC23002D78EB /* GoogleService-Info.plist */,
 				C869572E234440D8007FF50F /* Preview Content */,
 			);
 			path = "firebase-auth";
@@ -289,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8695733234440D8007FF50F /* LaunchScreen.storyboard in Resources */,
+				C8DC283F2344BC23002D78EB /* GoogleService-Info.plist in Resources */,
 				C8695730234440D8007FF50F /* Preview Assets.xcassets in Resources */,
 				C869572D234440D8007FF50F /* Assets.xcassets in Resources */,
 			);

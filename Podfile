@@ -6,6 +6,7 @@ target 'firebase-auth' do
   use_frameworks!
 
   # Pods for firebase-auth
+  pod 'Firebase/Analytics'
   pod 'FirebaseUI'
 
   target 'firebase-authTests' do
