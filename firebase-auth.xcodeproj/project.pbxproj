@@ -10,6 +10,8 @@
 		64871F929B5534FFB4235449 /* Pods_firebase_auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8F81697D89423BB1046BA5 /* Pods_firebase_auth.framework */; };
 		8A30B6C35C4210D029750E8B /* Pods_firebase_authTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 211E745FC593DE7009A41D88 /* Pods_firebase_authTests.framework */; };
 		B01C653A30C3A55556FBA1DE /* Pods_firebase_auth_firebase_authUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F775192AF1000D69AC438D /* Pods_firebase_auth_firebase_authUITests.framework */; };
+		C83D04FE23FF574F00B9F513 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D04FD23FF574F00B9F513 /* Environment.swift */; };
+		C83D050023FF58D800B9F513 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */; };
 		C8695727234440D7007FF50F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695726234440D7007FF50F /* AppDelegate.swift */; };
 		C8695729234440D7007FF50F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695728234440D7007FF50F /* SceneDelegate.swift */; };
 		C869572B234440D7007FF50F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C869572A234440D7007FF50F /* ContentView.swift */; };
@@ -48,6 +50,8 @@
 		9A70766F4BED724ED1292F6F /* Pods-firebase-auth-firebase-authUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-auth-firebase-authUITests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-auth-firebase-authUITests/Pods-firebase-auth-firebase-authUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A1E176BC3636D76179511F0C /* Pods-firebase-authTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-authTests.debug.xcconfig"; path = "Target Support Files/Pods-firebase-authTests/Pods-firebase-authTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF8F81697D89423BB1046BA5 /* Pods_firebase_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebase_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83D04FD23FF574F00B9F513 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
 		C8695723234440D7007FF50F /* firebase-auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-auth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8695726234440D7007FF50F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8695728234440D7007FF50F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 		C8695748234440D9007FF50F /* firebase_authUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firebase_authUITests.swift; sourceTree = "<group>"; };
 		C869574A234440D9007FF50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8DC283E2344BC23002D78EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C8E4C2F523FCB374001F2932 /* firebase-auth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "firebase-auth.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,7 @@
 		C8695725234440D7007FF50F /* firebase-auth */ = {
 			isa = PBXGroup;
 			children = (
+				C8E4C2F523FCB374001F2932 /* firebase-auth.entitlements */,
 				C8695726234440D7007FF50F /* AppDelegate.swift */,
 				C8695728234440D7007FF50F /* SceneDelegate.swift */,
 				C869572A234440D7007FF50F /* ContentView.swift */,
@@ -139,6 +145,8 @@
 				C8695734234440D8007FF50F /* Info.plist */,
 				C8DC283E2344BC23002D78EB /* GoogleService-Info.plist */,
 				C869572E234440D8007FF50F /* Preview Content */,
+				C83D04FD23FF574F00B9F513 /* Environment.swift */,
+				C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */,
 			);
 			path = "firebase-auth";
 			sourceTree = "<group>";
@@ -457,7 +465,9 @@
 			files = (
 				C8695727234440D7007FF50F /* AppDelegate.swift in Sources */,
 				C8695729234440D7007FF50F /* SceneDelegate.swift in Sources */,
+				C83D050023FF58D800B9F513 /* FirebaseAuth.swift in Sources */,
 				C869572B234440D7007FF50F /* ContentView.swift in Sources */,
+				C83D04FE23FF574F00B9F513 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,9 +633,10 @@
 			baseConfigurationReference = 2E20F36961E0B1EECCCCA40A /* Pods-firebase-auth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "firebase-auth/firebase-auth.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"firebase-auth/Preview Content\"";
-				DEVELOPMENT_TEAM = V872GAW3MT;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "firebase-auth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -644,9 +655,10 @@
 			baseConfigurationReference = 18955966535526A90FE8EBA6 /* Pods-firebase-auth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "firebase-auth/firebase-auth.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"firebase-auth/Preview Content\"";
-				DEVELOPMENT_TEAM = V872GAW3MT;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "firebase-auth/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
