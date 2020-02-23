@@ -13,8 +13,11 @@ struct ContentView: View {
     @Environment(\.window) var window
     @Environment(\.firebaseAuth) var firebaseAuth
 
+    @EnvironmentObject var user: FUser
+
     var body: some View {
         VStack {
+            Text(user.uid())
             Button(action: {
                 self.window?.rootViewController?.present(self.firebaseAuth!.authViewController!, animated: true, completion: nil)
             }) {
@@ -31,7 +34,9 @@ struct ContentView: View {
             .frame(width: 250, height: 200, alignment: .center)
             Spacer()
             Button(action: {
-                try! self.firebaseAuth?.authUI?.signOut()
+                if let auth = self.firebaseAuth {
+                    auth.signout()
+                }
             }) {
                 Text("Logout")
                 .fontWeight(.bold)
@@ -49,6 +54,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(FUser())
     }
 }

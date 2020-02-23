@@ -9,10 +9,13 @@ import FirebaseUI
 
 class FirebaseAuth: NSObject, FUIAuthDelegate {
 
+    var user: FUser
     var authUI: FUIAuth? = nil
     var authViewController: UINavigationController? = nil
 
-    override init() {
+    init(user: FUser) {
+
+        self.user = user
 
         super.init()
 
@@ -34,7 +37,14 @@ class FirebaseAuth: NSObject, FUIAuthDelegate {
         if user == nil {
             print("Error: \(String(describing: error))")
         }
-        print("User ID: \(String(describing: user?.uid))")
+        self.user.firebaseUser = user
+    }
+
+    func signout() {
+        if let auth = self.authUI {
+            try! auth.signOut()
+            self.user.firebaseUser = nil
+        }
     }
 
 }

@@ -24,9 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
+            let user = FUser()
             window.rootViewController = UIHostingController(rootView: contentView
                 .environment(\.window, window)
-                .environment(\.firebaseAuth, FirebaseAuth())
+                .environment(\.firebaseAuth, FirebaseAuth(user: user))
+                .environmentObject(user)
             )
             self.window = window
             window.makeKeyAndVisible()

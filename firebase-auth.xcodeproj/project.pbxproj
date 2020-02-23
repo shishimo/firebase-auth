@@ -12,6 +12,7 @@
 		B01C653A30C3A55556FBA1DE /* Pods_firebase_auth_firebase_authUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F775192AF1000D69AC438D /* Pods_firebase_auth_firebase_authUITests.framework */; };
 		C83D04FE23FF574F00B9F513 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D04FD23FF574F00B9F513 /* Environment.swift */; };
 		C83D050023FF58D800B9F513 /* FirebaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */; };
+		C83D050223FF9BBE00B9F513 /* FUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83D050123FF9BBE00B9F513 /* FUser.swift */; };
 		C8695727234440D7007FF50F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695726234440D7007FF50F /* AppDelegate.swift */; };
 		C8695729234440D7007FF50F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8695728234440D7007FF50F /* SceneDelegate.swift */; };
 		C869572B234440D7007FF50F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C869572A234440D7007FF50F /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 		AF8F81697D89423BB1046BA5 /* Pods_firebase_auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebase_auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83D04FD23FF574F00B9F513 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuth.swift; sourceTree = "<group>"; };
+		C83D050123FF9BBE00B9F513 /* FUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUser.swift; sourceTree = "<group>"; };
 		C8695723234440D7007FF50F /* firebase-auth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-auth.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8695726234440D7007FF50F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8695728234440D7007FF50F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				C869572E234440D8007FF50F /* Preview Content */,
 				C83D04FD23FF574F00B9F513 /* Environment.swift */,
 				C83D04FF23FF58D800B9F513 /* FirebaseAuth.swift */,
+				C83D050123FF9BBE00B9F513 /* FUser.swift */,
 			);
 			path = "firebase-auth";
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 			files = (
 				C8695727234440D7007FF50F /* AppDelegate.swift in Sources */,
 				C8695729234440D7007FF50F /* SceneDelegate.swift in Sources */,
+				C83D050223FF9BBE00B9F513 /* FUser.swift in Sources */,
 				C83D050023FF58D800B9F513 /* FirebaseAuth.swift in Sources */,
 				C869572B234440D7007FF50F /* ContentView.swift in Sources */,
 				C83D04FE23FF574F00B9F513 /* Environment.swift in Sources */,
