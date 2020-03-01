@@ -680,7 +680,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1E176BC3636D76179511F0C /* Pods-firebase-authTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V872GAW3MT;
@@ -703,7 +703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62DA6488D424FFB69A4AB4F7 /* Pods-firebase-authTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V872GAW3MT;
@@ -726,7 +726,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A70766F4BED724ED1292F6F /* Pods-firebase-auth-firebase-authUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V872GAW3MT;
 				INFOPLIST_FILE = "firebase-authUITests/Info.plist";
@@ -747,7 +747,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 720BB3B3112A767ACAF23AF8 /* Pods-firebase-auth-firebase-authUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V872GAW3MT;
 				INFOPLIST_FILE = "firebase-authUITests/Info.plist";
