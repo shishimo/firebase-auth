@@ -7,6 +7,8 @@ target 'firebase-auth' do
 
   # Pods for firebase-auth
   pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   pod 'FirebaseUI'
 
   target 'firebase-authTests' do
