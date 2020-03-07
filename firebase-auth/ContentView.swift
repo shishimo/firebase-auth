@@ -16,66 +16,151 @@ struct ContentView: View {
 
     @EnvironmentObject var user: FUser
 
+    @State private var collection = "users"
+    @State private var document = ""
+    @State private var nickname = ""
+    @State private var showAlert = false
+
+    var alert: Alert {
+        Alert(title: Text("iOScreator"), message: Text("Hello SwiftUI"), dismissButton: .default(Text("Dismiss")))
+    }
+
     var body: some View {
         VStack {
-            Text("User ID:")
-            Text(user.uid())
-            Spacer()
-            Button(action: {
-                let db = Firestore.firestore()
-
-                // Add a new document with a generated ID
-                var ref: DocumentReference? = nil
-                ref = db.collection("users").addDocument(data: [
-                    "nickname": "shishimo",
-                ]) { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        print("Document added with ID: \(ref!.documentID)")
+            HStack(alignment: .center, spacing: 5) {
+                Text("User ID:")
+                Text(user.uid())
+            }
+            TextField("Input collection name", text: $collection,
+                onEditingChanged: { begin in
+                    if !begin {
+                        print("Edit end: input data: \(self.collection)")
                     }
                 }
-            }) {
-                Text("User Create")
-                    .fontWeight(.bold)
-                    .font(.title)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .padding(10)
-                    .border(Color.blue, width: 5)
-                    .cornerRadius(10)
-            }   .border(Color.blue, width: 1)
-            Spacer()
+            )
+           .textFieldStyle(RoundedBorderTextFieldStyle())
+           .padding()
+            TextField("Input document name", text: $document,
+                onEditingChanged: { begin in
+                    if !begin {
+                        print("Edit end: input data: \(self.document)")
+                    }
+                }
+            )
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+            TextField("Input nickname", text: $nickname,
+                onEditingChanged: { begin in
+                    if !begin {
+                        print("Edit end: input data: \(self.nickname)")
+                    }
+                }
+            )
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
             Button(action: {
-                self.window?.rootViewController?.present(self.firebaseAuth!.authViewController!, animated: true, completion: nil)
+                if self.document == "" || self.collection == "" {
+                    print("no doc or no collection")
+                    self.showAlert = true
+                    return
+                }
+                if self.user.uid() == "" {
+                    print("not logged in")
+                    return
+                }
+                let db = Firestore.firestore()
+                db.collection(self.collection).document(self.document).setData([
+                    "uid": self.user.uid(),
+                    "nickname": self.nickname,
+                    "updated_at": FieldValue.serverTimestamp(),
+                ], merge: true)
             }) {
-                Text("Login")
+                Text("Save")
                 .fontWeight(.bold)
-                .font(.title)
                 .padding()
-                .background(Color.green)
                 .foregroundColor(.white)
-                .padding(10)
-                .border(Color.green, width: 5)
+                .background(Color.red)
+                .border(Color.red, width: 5)
                 .cornerRadius(10)
             }
-            .frame(width: 250, height: 200, alignment: .center)
+            .alert(isPresented: $showAlert) {
+                self.alert
+            }
+
             Spacer()
-            Button(action: {
-                if let auth = self.firebaseAuth {
-                    auth.signout()
+            HStack {
+                Button(action: {
+                    let db = Firestore.firestore()
+                    db.collection("users").getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            let num = querySnapshot!.documents.count
+                            print("Get \(num) documents")
+                        }
+                    }
+                }) {
+                    Text("Get Information")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .border(Color.red, width: 5)
+                        .cornerRadius(10)
+                }   .border(Color.blue, width: 1)
+                Button(action: {
+                    let db = Firestore.firestore()
+
+                    // Add a new document with a generated ID
+                    var ref: DocumentReference? = nil
+                    ref = db.collection("users").addDocument(data: [
+                        "nickname": "shishimo",
+                    ]) { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("Document added with ID: \(ref!.documentID)")
+                        }
+                    }
+                }) {
+                    Text("User Create")
+                        .fontWeight(.bold)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .border(Color.blue, width: 5)
+                        .cornerRadius(10)
+                }   .border(Color.blue, width: 1)
+            }
+            HStack {
+                Button(action: {
+                    self.window?.rootViewController?.present(self.firebaseAuth!.authViewController!, animated: true, completion: nil)
+                }) {
+                    Text("Login")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(Color.green)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .border(Color.green, width: 5)
+                    .cornerRadius(10)
                 }
-            }) {
-                Text("Logout")
-                .fontWeight(.bold)
-                .font(.title)
-                .padding()
-                .background(Color.purple)
-                .foregroundColor(.white)
-                .padding(10)
-                .border(Color.purple, width: 5)
-                .cornerRadius(10)
+                Button(action: {
+                    if let auth = self.firebaseAuth {
+                        auth.signout()
+                    }
+                }) {
+                    Text("Logout")
+                    .fontWeight(.bold)
+                    .padding()
+                    .background(Color.purple)
+                    .foregroundColor(.white)
+                    .padding(10)
+                    .border(Color.purple, width: 5)
+                    .cornerRadius(10)
+                }
             }
         }
     }

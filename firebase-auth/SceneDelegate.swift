@@ -6,6 +6,7 @@
 //  Copyright © 2019 Shinichiro Shimoda. All rights reserved.
 //
 
+import Firebase
 import UIKit
 import SwiftUI
 
@@ -25,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             let user = FUser()
+            user.firebaseUser = Auth.auth().currentUser
             window.rootViewController = UIHostingController(rootView: contentView
                 .environment(\.window, window)
                 .environment(\.firebaseAuth, FirebaseAuth(user: user))
